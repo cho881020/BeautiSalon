@@ -21,7 +21,7 @@ import kr.co.tjeit.beautisalon.datas.DesignCase;
 import kr.co.tjeit.beautisalon.datas.Designer;
 import kr.co.tjeit.beautisalon.datas.User;
 import kr.co.tjeit.beautisalon.utils.DateTimeUtil;
-import kr.co.tjeit.beautisalon.utils.GeneralUtil;
+import kr.co.tjeit.beautisalon.utils.GlobalData;
 
 public class MakeReservationActivity extends BaseActivity {
 
@@ -106,8 +106,8 @@ public class MakeReservationActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-                GeneralUtil.globalDesignCase.add(new DesignCase(-1, mReservationDate, -1, mDesigner, new User(), -1, null));
-                Log.d("미용사례개수",GeneralUtil.globalDesignCase.size() + "개");
+                GlobalData.globalDesignCase.add(new DesignCase(-1, mReservationDate, -1, mDesigner, new User(), -1, null));
+                Log.d("미용사례개수", GlobalData.globalDesignCase.size() + "개");
 
 
                 Toast.makeText(mContext, R.string.reservation_confirm_message, Toast.LENGTH_SHORT).show();

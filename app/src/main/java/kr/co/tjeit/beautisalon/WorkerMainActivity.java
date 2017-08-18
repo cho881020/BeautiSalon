@@ -5,7 +5,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import kr.co.tjeit.beautisalon.datas.DesignCase;
-import kr.co.tjeit.beautisalon.utils.GeneralUtil;
+import kr.co.tjeit.beautisalon.utils.GlobalData;
 
 public class WorkerMainActivity extends BaseActivity {
 
@@ -34,7 +34,7 @@ public class WorkerMainActivity extends BaseActivity {
 
         reservationAdapter = new ArrayAdapter<DesignCase>(mContext,
                 android.R.layout.simple_list_item_1,
-                GeneralUtil.globalDesignCase);
+                GlobalData.globalDesignCase);
         reservationListView.setAdapter(reservationAdapter);
 
     }

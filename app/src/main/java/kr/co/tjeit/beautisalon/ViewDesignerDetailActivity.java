@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 import kr.co.tjeit.beautisalon.adapters.PortfolioAdapter;
 import kr.co.tjeit.beautisalon.datas.Designer;
-import kr.co.tjeit.beautisalon.utils.GeneralUtil;
 
 public class ViewDesignerDetailActivity extends BaseActivity {
 
