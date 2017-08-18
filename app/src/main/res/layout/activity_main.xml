@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="kr.co.tjeit.beautisalon.MainActivity">
+    tools:context="kr.co.tjeit.beautisalon.activity.user_activity.MainActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -19,6 +19,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_activity_title"/>
+
+        <ImageView
+            android:id="@+id/filterBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="5dp"/>
 
     </FrameLayout>
 

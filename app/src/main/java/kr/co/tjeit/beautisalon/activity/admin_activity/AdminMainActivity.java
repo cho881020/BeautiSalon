@@ -1,7 +1,9 @@
-package kr.co.tjeit.beautisalon;
+package kr.co.tjeit.beautisalon.activity.admin_activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import kr.co.tjeit.beautisalon.R;
+import kr.co.tjeit.beautisalon.activity.BaseActivity;
 
 public class AdminMainActivity extends BaseActivity {
 

@@ -1,4 +1,4 @@
-package kr.co.tjeit.beautisalon;
+package kr.co.tjeit.beautisalon.activity;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;

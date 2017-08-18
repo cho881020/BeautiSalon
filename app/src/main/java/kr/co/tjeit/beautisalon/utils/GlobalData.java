@@ -1,6 +1,7 @@
 package kr.co.tjeit.beautisalon.utils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import kr.co.tjeit.beautisalon.datas.DesignCase;
 import kr.co.tjeit.beautisalon.datas.Designer;
@@ -15,8 +16,8 @@ public class GlobalData {
     // 대부분의 변수/메쏘드는 public static으로
     // GlobalData.메쏘드(), GlobalData.변수
 
-    public static ArrayList<DesignCase> globalDesignCase = new ArrayList<DesignCase>();
-    public static ArrayList<Designer> designers = new ArrayList<Designer>();
-    public static ArrayList<User> users = new ArrayList<User>();
+    public static List<DesignCase> globalDesignCase = new ArrayList<>();
+    public static List<Designer> designers = new ArrayList<>();
+    public static List<User> users = new ArrayList<>();
 
 }

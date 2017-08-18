@@ -1,4 +1,4 @@
-package kr.co.tjeit.beautisalon;
+package kr.co.tjeit.beautisalon.activity.user_activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import kr.co.tjeit.beautisalon.R;
+import kr.co.tjeit.beautisalon.activity.BaseActivity;
+import kr.co.tjeit.beautisalon.activity.user_activity.MakeReservationActivity;
 import kr.co.tjeit.beautisalon.adapters.PortfolioAdapter;
 import kr.co.tjeit.beautisalon.datas.Designer;
 

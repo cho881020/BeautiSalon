@@ -1,9 +1,11 @@
-package kr.co.tjeit.beautisalon;
+package kr.co.tjeit.beautisalon.activity.worker_activity;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import kr.co.tjeit.beautisalon.R;
+import kr.co.tjeit.beautisalon.activity.BaseActivity;
 import kr.co.tjeit.beautisalon.datas.DesignCase;
 import kr.co.tjeit.beautisalon.utils.GlobalData;
 

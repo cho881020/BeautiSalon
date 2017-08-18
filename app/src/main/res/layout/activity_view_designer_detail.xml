@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context="kr.co.tjeit.beautisalon.ViewDesignerDetailActivity">
+    tools:context="kr.co.tjeit.beautisalon.activity.user_activity.ViewDesignerDetailActivity">
 
     <FrameLayout
         android:layout_width="match_parent"

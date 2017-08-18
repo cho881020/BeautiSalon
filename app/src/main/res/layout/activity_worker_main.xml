@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context="kr.co.tjeit.beautisalon.WorkerMainActivity">
+    tools:context="kr.co.tjeit.beautisalon.activity.worker_activity.WorkerMainActivity">
 
     <!-- 예약 목록 확인 제목 달아주기 -->
 

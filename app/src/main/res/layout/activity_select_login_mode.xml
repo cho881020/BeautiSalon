@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/white"
-    tools:context="kr.co.tjeit.beautisalon.SelectLoginModeActivity">
+    tools:context="kr.co.tjeit.beautisalon.activity.SelectLoginModeActivity">
 
     <ImageView
         android:src="@drawable/salon_logo"

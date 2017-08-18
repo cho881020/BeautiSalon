@@ -1,4 +1,4 @@
-package kr.co.tjeit.beautisalon;
+package kr.co.tjeit.beautisalon.activity.user_activity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -17,6 +17,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import kr.co.tjeit.beautisalon.R;
+import kr.co.tjeit.beautisalon.activity.BaseActivity;
 import kr.co.tjeit.beautisalon.datas.DesignCase;
 import kr.co.tjeit.beautisalon.datas.Designer;
 import kr.co.tjeit.beautisalon.datas.User;

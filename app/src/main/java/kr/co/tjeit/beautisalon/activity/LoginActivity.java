@@ -1,4 +1,4 @@
-package kr.co.tjeit.beautisalon;
+package kr.co.tjeit.beautisalon.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import kr.co.tjeit.beautisalon.R;
+import kr.co.tjeit.beautisalon.activity.user_activity.MainActivity;
+import kr.co.tjeit.beautisalon.activity.worker_activity.WorkerMainActivity;
 
 public class LoginActivity extends BaseActivity {
 

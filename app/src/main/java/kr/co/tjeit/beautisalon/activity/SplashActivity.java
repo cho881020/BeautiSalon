@@ -1,4 +1,4 @@
-package kr.co.tjeit.beautisalon;
+package kr.co.tjeit.beautisalon.activity;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import kr.co.tjeit.beautisalon.R;
 import kr.co.tjeit.beautisalon.datas.DesignCase;
 import kr.co.tjeit.beautisalon.datas.Designer;
 import kr.co.tjeit.beautisalon.datas.User;

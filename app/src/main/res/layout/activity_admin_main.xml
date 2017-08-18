@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="kr.co.tjeit.beautisalon.AdminMainActivity">
+    tools:context="kr.co.tjeit.beautisalon.activity.admin_activity.AdminMainActivity">
 
     <HorizontalScrollView
         android:layout_width="match_parent"
