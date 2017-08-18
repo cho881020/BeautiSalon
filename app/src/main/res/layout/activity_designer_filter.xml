@@ -20,6 +20,13 @@
             android:textColor="@color/white"
             android:layout_gravity="center"/>
 
+        <Button
+            android:id="@+id/okBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:text="확인"/>
+
     </FrameLayout>
 
     <LinearLayout
@@ -39,6 +46,8 @@
             android:layout_marginTop="10dp">
 
             <ToggleButton
+                android:id="@+id/manSelectToggleBtn"
+                android:checked="true"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textOff="남성 미선택"
@@ -46,6 +55,8 @@
                 android:layout_weight="1"/>
 
             <ToggleButton
+                android:id="@+id/womanSelectToggleBtn"
+                android:checked="true"
                 android:textOff="여성 미선택"
                 android:textOn="여성 선택"
                 android:layout_width="0dp"

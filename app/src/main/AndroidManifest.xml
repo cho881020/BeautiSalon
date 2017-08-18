@@ -27,7 +27,8 @@
         <activity android:name=".activity.worker_activity.WorkerMainActivity" />
         <activity android:name=".activity.admin_activity.AdminMainActivity" />
         <activity android:name=".activity.user_activity.MakeReservationActivity" />
-        <activity android:name=".activity.user_activity.DesignerFilterActivity"></activity>
+        <activity android:name=".activity.user_activity.DesignerFilterActivity" />
+        <activity android:name=".activity.ReqPracticeActivity"></activity>
     </application>
 
 </manifest>
