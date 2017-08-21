@@ -1,11 +1,14 @@
 package kr.co.tjeit.beautisalon.activity.user_activity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import kr.co.tjeit.beautisalon.R;
@@ -67,6 +70,36 @@ public class ViewDesignerDetailActivity extends BaseActivity {
 //        디자이너의 연령대 설정
         String majorAgeStr = String.format(Locale.KOREA, "%d대", mDesigner.getMajorAge());
         majorAgeTxt.setText(majorAgeStr);
+
+//        평점을 설정하는 알고리즘
+
+//        모든 별들을 하나의 공간에 묶어 넣기 위한 공간.
+        List<ImageView> stars = new ArrayList<>();
+        stars.add(star1);
+        stars.add(star2);
+        stars.add(star3);
+        stars.add(star4);
+        stars.add(star5);
+
+//        배열로 간단히 코딩 할 수도 있다.
+//        ImageView[] starArray = {star1, star2, star3, star4, star5};
+
+//        일단 모든 별을 다 숨김 처리.
+        for (ImageView iv : stars) {
+            iv.setVisibility(View.GONE);
+        }
+
+//        필요한 갯수만큼 별표를 출력
+//        필요한 갯수?
+        int starCount = (int) mDesigner.getAvgRating();
+
+//        구해진 갯수만큼 반복을 돌면서, 다시 별표를 표시.
+        for (int i=0 ; i < starCount ; i++) {
+            ImageView iv = stars.get(i);
+            iv.setVisibility(View.VISIBLE);
+        }
+
+
 
     }
 
