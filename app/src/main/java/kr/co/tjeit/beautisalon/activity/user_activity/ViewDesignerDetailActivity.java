@@ -1,5 +1,6 @@
 package kr.co.tjeit.beautisalon.activity.user_activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,15 +9,20 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
 import kr.co.tjeit.beautisalon.R;
 import kr.co.tjeit.beautisalon.activity.BaseActivity;
 import kr.co.tjeit.beautisalon.adapters.ReviewAdapter;
+import kr.co.tjeit.beautisalon.datas.DesignCase;
 import kr.co.tjeit.beautisalon.datas.Designer;
+import kr.co.tjeit.beautisalon.utils.GlobalData;
 
 public class ViewDesignerDetailActivity extends BaseActivity {
+
+    final int REQUEST_FOR_REVIEW = 1;
 
     private android.widget.TextView nameTxt;
     private android.widget.TextView genderTxt;
@@ -34,6 +40,7 @@ public class ViewDesignerDetailActivity extends BaseActivity {
     Designer mDesigner = null;
     private ListView reviewListView;
     ReviewAdapter mAdapter;
+    private Button makeReviewBtn;
 
 
 
@@ -50,6 +57,47 @@ public class ViewDesignerDetailActivity extends BaseActivity {
     @Override
     public void setupEvents() {
         super.setupEvents();
+
+        makeReviewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, MakeReviewActivity.class);
+                startActivityForResult(intent, REQUEST_FOR_REVIEW);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_FOR_REVIEW) {
+            if (resultCode == RESULT_OK) {
+                String reviewContent = data.getStringExtra("리뷰내용");
+
+//                이 화면에 나타난 디자이너의 리뷰목록을 하나 추가해주고
+//                그 리스트뷰를 새로고침.
+
+                DesignCase tempCase = new DesignCase(R.drawable.salon_logo,
+                        Calendar.getInstance(),
+                        3,
+                        mDesigner,
+                        GlobalData.loginUser,
+                        15000,
+                        reviewContent);
+
+                mDesigner.getPortfolio().add(tempCase);
+                mAdapter.notifyDataSetChanged();
+
+//                애니메이션을 이용해, 마지막칸으로 이동시켜주는 기능.
+                reviewListView.smoothScrollToPosition(mDesigner.getPortfolio().size()-1);
+
+
+
+            }
+        }
+
     }
 
     @Override
@@ -115,7 +163,7 @@ public class ViewDesignerDetailActivity extends BaseActivity {
     public void bindViews() {
         super.bindViews();
         this.reservationBtn = (Button) findViewById(R.id.reservationBtn);
-        this.checkScheduleBtn = (Button) findViewById(R.id.checkScheduleBtn);
+        this.makeReviewBtn = (Button) findViewById(R.id.makeReviewBtn);
         this.reviewListView = (ListView) findViewById(R.id.reviewListView);
         this.star5 = (ImageView) findViewById(R.id.star5);
         this.star4 = (ImageView) findViewById(R.id.star4);
