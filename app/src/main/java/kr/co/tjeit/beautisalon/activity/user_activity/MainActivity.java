@@ -56,7 +56,14 @@ public class MainActivity extends BaseActivity {
     public void setupEvents() {
         super.setupEvents();
 
-//
+        designerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(mContext, ViewDesignerDetailActivity.class);
+                intent.putExtra("디자이너데이터", mDisplayDesignerList.get(position));
+                startActivity(intent);
+            }
+        });
 
         reqTestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
