@@ -36,6 +36,7 @@ public class MainActivity extends BaseActivity {
     boolean womanSelect = true;
     // 몇점 이상의 디자이너를 보여줄건지?
     int minRating = 0;
+    String inputNickName = "";
     private android.widget.Button reqTestBtn;
     private android.widget.TextView titleTxt;
 
@@ -116,7 +117,8 @@ public class MainActivity extends BaseActivity {
             if (resultCode == RESULT_OK) {
                 manSelect = data.getBooleanExtra("남자선택여부", true);
                 womanSelect = data.getBooleanExtra("여자선택여부", true);
-
+                minRating = data.getIntExtra("선택된평점", 0);
+                inputNickName = data.getStringExtra("입력된닉네임");
                 filterAndRefreshListView();
 
             }
@@ -165,8 +167,34 @@ public class MainActivity extends BaseActivity {
                 }
             }
 
+            // 최소평점보다 높은지.
+
+            // 평점이 적절한지를 기록하는 변수.
+            boolean ratingOk = false;
+
+            if (ds.getAvgRating() > minRating) {
+                ratingOk = true;
+            }
+
+//            닉네임을 검사
+
+            boolean nickNameOk = false;
+
+//            String의 기능 응용.
+//            1. contains => 앞의 String이 뒤(괄호내부)의 String을 포함하는지 t/f
+//            2. toLowerCase => 이 메쏘드를 실행하는 String의 모든 영문자를 소문자로.
+//              cf) toUpperCase => 모든 영문자를 대문자로.
+
+//            응용! 대소문자 구분 없이 검색하게 해보자.
+//            모든걸 전부 강제로 소문자로 변환해주면,
+//            대문자를 입력했건 소문자를 입력했건 전부 소문자가 되므로
+//            대문자 소문자 관계 없이 검색하는게 가능해진다.
+            if (ds.getNickName().toLowerCase().startsWith(inputNickName.toLowerCase())) {
+                nickNameOk = true;
+            }
+
             // 상황이 맞는지 재확인해서, 실제로 데이터를 추가
-            if (genderOk) {
+            if (genderOk && ratingOk && nickNameOk) {
                 mDisplayDesignerList.add(ds);
             }
 
