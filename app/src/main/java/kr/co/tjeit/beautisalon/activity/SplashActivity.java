@@ -66,6 +66,11 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void addUsers() {
+
+        GlobalData.loginUser = new User("테스트사용자", 1,
+                Calendar.getInstance(), new ArrayList<Designer>(),
+                "https://image.fmkorea.com/files/attach/new/20170628/3655299/388198569/695916068/5f8f3b1803d9b9858f8d09433b9c1ee2.jpg");
+
         GlobalData.users.clear();
 
         GlobalData.users.add(new User("한상열", 0, Calendar.getInstance(), new ArrayList<Designer>(), "https://s3.ap-northeast-2.amazonaws.com/slws3/imgs/tje_practice/11379757_445206435653478_1894580131_n.jpg"));

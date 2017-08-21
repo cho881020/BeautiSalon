@@ -13,6 +13,7 @@ import java.util.Locale;
 
 import kr.co.tjeit.beautisalon.R;
 import kr.co.tjeit.beautisalon.activity.BaseActivity;
+import kr.co.tjeit.beautisalon.adapters.ReviewAdapter;
 import kr.co.tjeit.beautisalon.datas.Designer;
 
 public class ViewDesignerDetailActivity extends BaseActivity {
@@ -27,11 +28,14 @@ public class ViewDesignerDetailActivity extends BaseActivity {
     private android.widget.ImageView star3;
     private android.widget.ImageView star4;
     private android.widget.ImageView star5;
-    private android.widget.ListView portfolioListView;
     private android.widget.Button checkScheduleBtn;
     private android.widget.Button reservationBtn;
 
     Designer mDesigner = null;
+    private ListView reviewListView;
+    ReviewAdapter mAdapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,10 @@ public class ViewDesignerDetailActivity extends BaseActivity {
     @Override
     public void setValues() {
         super.setValues();
+
+//        리뷰 목록을 출력
+        mAdapter = new ReviewAdapter(mContext, mDesigner.getPortfolio());
+        reviewListView.setAdapter(mAdapter);
 
 //        이름을 설정
         nameTxt.setText(mDesigner.getName());
@@ -108,7 +116,7 @@ public class ViewDesignerDetailActivity extends BaseActivity {
         super.bindViews();
         this.reservationBtn = (Button) findViewById(R.id.reservationBtn);
         this.checkScheduleBtn = (Button) findViewById(R.id.checkScheduleBtn);
-        this.portfolioListView = (ListView) findViewById(R.id.portfolioListView);
+        this.reviewListView = (ListView) findViewById(R.id.reviewListView);
         this.star5 = (ImageView) findViewById(R.id.star5);
         this.star4 = (ImageView) findViewById(R.id.star4);
         this.star3 = (ImageView) findViewById(R.id.star3);
