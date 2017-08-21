@@ -56,6 +56,8 @@ public class MainActivity extends BaseActivity {
     public void setupEvents() {
         super.setupEvents();
 
+//
+
         reqTestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,15 +66,6 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        designerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Intent intent = new Intent(mContext, ViewDesignerDetailActivity.class);
-                intent.putExtra("designer", GlobalData.designers.get(position));
-                startActivity(intent);
-            }
-        });
 
         filterBtn.setOnClickListener(new View.OnClickListener() {
             @Override

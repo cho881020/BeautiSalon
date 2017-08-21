@@ -109,33 +109,33 @@
                 android:id="@+id/star1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:src="@drawable/rating_star"/>
             <ImageView
                 android:id="@+id/star2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:src="@drawable/rating_star"/>
 
             <ImageView
                 android:id="@+id/star3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:src="@drawable/rating_star"/>
 
             <ImageView
                 android:id="@+id/star4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:src="@drawable/rating_star"/>
             <ImageView
                 android:id="@+id/star5"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:src="@drawable/rating_star"/>
 
         </LinearLayout>
@@ -165,7 +165,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/check_schedule" />
+            android:text="리뷰 남기기" />
 
         <Button
             android:id="@+id/reservationBtn"
