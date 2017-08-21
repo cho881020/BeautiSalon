@@ -14,32 +14,43 @@
         android:padding="10dp"/>
 
     <RadioGroup
+        android:id="@+id/ratingRadioGroup"
         android:gravity="center"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content">
 
         <RadioButton
+            android:id="@+id/radioBtn1"
+            android:tag="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1점"/>
 
         <RadioButton
+            android:id="@+id/radioBtn2"
+            android:tag="2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2점"/>
 
         <RadioButton
+            android:id="@+id/radioBtn3"
+            android:tag="3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3점"/>
 
         <RadioButton
+            android:id="@+id/radioBtn4"
+            android:tag="4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4점"/>
 
         <RadioButton
+            android:id="@+id/radioBtn5"
+            android:tag="5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5점"/>

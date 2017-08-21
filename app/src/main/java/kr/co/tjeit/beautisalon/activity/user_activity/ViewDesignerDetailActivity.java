@@ -75,13 +75,14 @@ public class ViewDesignerDetailActivity extends BaseActivity {
         if (requestCode == REQUEST_FOR_REVIEW) {
             if (resultCode == RESULT_OK) {
                 String reviewContent = data.getStringExtra("리뷰내용");
+                int rating = data.getIntExtra("점수", -1);
 
 //                이 화면에 나타난 디자이너의 리뷰목록을 하나 추가해주고
 //                그 리스트뷰를 새로고침.
 
                 DesignCase tempCase = new DesignCase(R.drawable.salon_logo,
                         Calendar.getInstance(),
-                        3,
+                        rating,
                         mDesigner,
                         GlobalData.loginUser,
                         15000,
