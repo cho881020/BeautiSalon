@@ -83,6 +83,16 @@ public class SplashActivity extends BaseActivity {
         GlobalData.designers.add(new Designer("김정남", 1, "KJN", 30, 3.8f, new ArrayList<DesignCase>()));
         GlobalData.designers.add(new Designer("이승철", 0, "LSC", 50, 2.5f, new ArrayList<DesignCase>()));
         GlobalData.designers.add(new Designer("박준", 0, "PJ", 10, 4.8f, new ArrayList<DesignCase>()));
+        GlobalData.designers.add(new Designer("A", 1, "aaa", 10, 1.5f, new ArrayList<DesignCase>()));
+        GlobalData.designers.add(new Designer("B", 0, "bbb", 20, 0.0f, new ArrayList<DesignCase>()));
+        GlobalData.designers.add(new Designer("C", 1, "ccc", 30, 2.8f, new ArrayList<DesignCase>()));
+        GlobalData.designers.add(new Designer("D", 0, "ddd", 20, 2.5f, new ArrayList<DesignCase>()));
+        GlobalData.designers.add(new Designer("E", 0, "eee", 10, 3.8f, new ArrayList<DesignCase>()));
+        GlobalData.designers.add(new Designer("F", 1, "fff", 40, 4.5f, new ArrayList<DesignCase>()));
+        GlobalData.designers.add(new Designer("G", 0, "ggg", 40, 1.0f, new ArrayList<DesignCase>()));
+        GlobalData.designers.add(new Designer("H", 1, "hhh", 50, 3.8f, new ArrayList<DesignCase>()));
+        GlobalData.designers.add(new Designer("I", 0, "iii", 50, 2.5f, new ArrayList<DesignCase>()));
+        GlobalData.designers.add(new Designer("J", 0, "jjj", 10, 1.8f, new ArrayList<DesignCase>()));
 
     }
 
