@@ -29,7 +29,8 @@
         <activity android:name=".activity.user_activity.MakeReservationActivity" />
         <activity android:name=".activity.user_activity.DesignerFilterActivity" />
         <activity android:name=".activity.ReqPracticeActivity" />
-        <activity android:name=".activity.user_activity.MakeReviewActivity"></activity>
+        <activity android:name=".activity.user_activity.MakeReviewActivity" />
+        <activity android:name=".activity.user_activity.MyProfileActivity"></activity>
     </application>
 
 </manifest>

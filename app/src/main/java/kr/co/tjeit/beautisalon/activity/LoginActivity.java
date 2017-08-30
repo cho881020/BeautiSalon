@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import kr.co.tjeit.beautisalon.R;
 import kr.co.tjeit.beautisalon.activity.user_activity.MainActivity;
 import kr.co.tjeit.beautisalon.activity.worker_activity.WorkerMainActivity;
+import kr.co.tjeit.beautisalon.utils.ContextUtil;
 
 public class LoginActivity extends BaseActivity {
 
@@ -18,6 +21,7 @@ public class LoginActivity extends BaseActivity {
     private TextView modeTxt;
     private EditText idEdt;
     private Button loginBtn;
+    private android.widget.CheckBox autoLoginChk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +37,20 @@ public class LoginActivity extends BaseActivity {
     public void setupEvents() {
         super.setupEvents();
 
+        autoLoginChk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                ContextUtil.setAutoLogin(mContext, isChecked);
+            }
+        });
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                ContextUtil.setUserId(mContext, idEdt.getText().toString());
+
+                ContextUtil.setLoginUser(mContext, "A사용자", 1);
 
                 Intent intent;
                 if (isWorkerMode) {
@@ -50,11 +65,16 @@ public class LoginActivity extends BaseActivity {
             }
         });
 
+
     }
 
     @Override
     public void setValues() {
         super.setValues();
+
+        autoLoginChk.setChecked(ContextUtil.isAutoLogin(mContext));
+
+        idEdt.setText(ContextUtil.getUserId(mContext));
 
         if (isWorkerMode) {
             modeTxt.setVisibility(View.VISIBLE);
@@ -69,6 +89,7 @@ public class LoginActivity extends BaseActivity {
     public void bindViews() {
         super.bindViews();
         this.loginBtn = (Button) findViewById(R.id.loginBtn);
+        this.autoLoginChk = (CheckBox) findViewById(R.id.autoLoginChk);
         this.idEdt = (EditText) findViewById(R.id.idEdt);
         this.modeTxt = (TextView) findViewById(R.id.modeTxt);
     }

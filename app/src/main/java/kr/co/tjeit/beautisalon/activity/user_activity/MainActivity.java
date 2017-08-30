@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +41,7 @@ public class MainActivity extends BaseActivity {
 
     // 화면에 출력되는 디자이너 목록을 담는 리스트
     List<Designer> mDisplayDesignerList = new ArrayList<>();
+    private Button profileBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,14 @@ public class MainActivity extends BaseActivity {
     @Override
     public void setupEvents() {
         super.setupEvents();
+
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, MyProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
         designerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -231,6 +239,7 @@ public class MainActivity extends BaseActivity {
         this.designerListView = (ListView) findViewById(R.id.designerListView);
         this.filterBtn = (ImageView) findViewById(R.id.filterBtn);
         this.titleTxt = (TextView) findViewById(R.id.titleTxt);
+        this.profileBtn = (Button) findViewById(R.id.profileBtn);
         this.reqTestBtn = (Button) findViewById(R.id.reqTestBtn);
     }
 }
