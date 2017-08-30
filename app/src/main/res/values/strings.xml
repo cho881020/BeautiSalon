@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">BeautiSalon</string>
+    <string name="facebook_app_id">482211872164685</string>
+    <string name="fb_login_protocol_scheme">fb482211872164685</string>
+
 
     <!-- LoginActivity -->
     <string name="worker_mode">직원모드</string>
