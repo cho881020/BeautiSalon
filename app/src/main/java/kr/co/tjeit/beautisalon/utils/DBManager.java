@@ -2,6 +2,7 @@ package kr.co.tjeit.beautisalon.utils;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
@@ -153,6 +154,19 @@ public class DBManager {
 //        );
 //
 //    }
+
+//    데이터 조회 기능
+//    모든 디자이너 목록 가져오기
+    public Cursor getAllDesignersCursor() {
+
+//        일반적인 CREATE TABLE, INSERT INTO 등등의 쿼리는 execSQL 로 실행.
+//
+//        SELECT 문 => 조회 결과를 표 형식으로 돌려받아야 함.
+//        execSQL은 리턴타입이 void. (아무것도 돌려주지 않음.)
+//        Cursor를 리턴해주는 rawQuery메쏘드를 이용
+
+        return mDatabase.rawQuery("SELECT * FROM " + TABLE_DESIGNER, null);
+    }
 
 
 }

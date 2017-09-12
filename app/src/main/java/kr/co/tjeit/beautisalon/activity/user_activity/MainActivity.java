@@ -1,6 +1,7 @@
 package kr.co.tjeit.beautisalon.activity.user_activity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,7 @@ import kr.co.tjeit.beautisalon.activity.BaseActivity;
 import kr.co.tjeit.beautisalon.activity.ReqPracticeActivity;
 import kr.co.tjeit.beautisalon.adapters.DesignerAdapter;
 import kr.co.tjeit.beautisalon.datas.Designer;
+import kr.co.tjeit.beautisalon.utils.DBManager;
 import kr.co.tjeit.beautisalon.utils.GlobalData;
 
 public class MainActivity extends BaseActivity {
@@ -219,6 +222,14 @@ public class MainActivity extends BaseActivity {
         // 뭐 하는 함수?
         // 액티비티가 처음 생성될 때 필요한 데이터/화면 값 설정.
         super.setValues();
+
+        Cursor cursor = DBManager.getInstance(mContext).getAllDesignersCursor();
+
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                Toast.makeText(mContext, "디자이너 : " + cursor.getString(1), Toast.LENGTH_SHORT).show();
+            }
+        }
 
         // 처음에는 조건없이 모든 디자이너를 화면에 출력해야함.
         // 화면에 표시될 List에, Global데이터의 모든 디자이너를 추가.
