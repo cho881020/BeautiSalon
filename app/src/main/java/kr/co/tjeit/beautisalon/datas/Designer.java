@@ -14,7 +14,7 @@ public class Designer implements Serializable {
     private String nickName;
     private int majorAge;
     private float avgRating;
-    private ArrayList<DesignCase> portfolio;
+    private ArrayList<DesignCase> portfolio = new ArrayList<>();
 
     public Designer() {
 

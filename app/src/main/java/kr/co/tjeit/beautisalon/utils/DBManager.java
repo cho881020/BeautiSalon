@@ -173,4 +173,12 @@ public class DBManager {
         return mDatabase.rawQuery("SELECT name FROM Designers WHERE majorAge = 20;", null);
     }
 
+//    모든 디자이너 목록
+    public Cursor getAllDesigners() {
+        return mDatabase.rawQuery("SELECT *, avg(dc.rating) AS avgRating\n" +
+                "FROM Designers AS d JOIN DesignCase AS dc\n" +
+                "ON d.id = dc.designer_id\n" +
+                "GROUP BY d.id;", null);
+    }
+
 }

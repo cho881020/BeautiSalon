@@ -231,18 +231,31 @@ public class MainActivity extends BaseActivity {
 //            }
 //        }
 
-//        1. 20대를 타겟으로 하는 디자이너의 이름을 토스트로.
 
-        Cursor c = DBManager.getInstance(mContext).get20MajorDesigner();
+//        DB에서 모든 디자이너 목록을 가져와서
+//        GlobalData의 designer에 모두 추가
+
+        GlobalData.designers.clear();
+
+        Cursor c = DBManager.getInstance(mContext).getAllDesigners();
 
         if (c != null) {
             while (c.moveToNext()) {
-                Toast.makeText(mContext, c.getString(0) , Toast.LENGTH_SHORT).show();
+                Designer d = new Designer();
+                d.setName(c.getString(1));
+                d.setNickName(c.getString(3));
+                d.setGender(c.getInt(2));
+                d.setMajorAge(c.getInt(4));
+                d.setAvgRating(c.getFloat(c.getColumnIndex("avgRating")));
+
+                GlobalData.designers.add(d);
             }
         }
 
 
-        // 처음에는 조건없이 모든 디자이너를 화면에 출력해야함.
+
+
+       // 처음에는 조건없이 모든 디자이너를 화면에 출력해야함.
         // 화면에 표시될 List에, Global데이터의 모든 디자이너를 추가.
         mDisplayDesignerList.addAll(GlobalData.designers);
 
