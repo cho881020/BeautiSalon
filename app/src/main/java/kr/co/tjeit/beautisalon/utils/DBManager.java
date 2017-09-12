@@ -1,5 +1,6 @@
 package kr.co.tjeit.beautisalon.utils;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -100,11 +101,54 @@ public class DBManager {
 
         );
 
+//        Designer 테이블 생성
+
+
+        mDatabase.execSQL(
+
+                "CREATE TABLE IF NOT EXISTS " + TABLE_DESIGNER +
+                        "(" +
+                        "id INTEGER PRIMARY KEY AUTOINCREMENT, "        +
+                        "name TEXT, " +
+                        "gender INTEGER, " +
+                        "nickName TEXT, " +
+                        "majorAge INTEGER" +
+                        ");"
+
+        );
+
 
 
 
     }
 
+
+    public long insertUser(ContentValues addRowValues) {
+
+//        사용자 테이블에 데이터를 추가하기 위한 기능.
+
+//        ContentValues : DB에 데이터를 넣기 위한 HashMap
+
+//        HashMap : "키" - "값" 묶음.
+
+        return mDatabase.insert(TABLE_USER, null, addRowValues);
+
+    }
+
+//    public void insertUserBySQL(String name, int gender, String URL) {
+//
+//        mDatabase.execSQL(
+//
+//                "INSERT INTO " + TABLE_USER +
+//                "VALUES (" +
+//                "null," +
+//                "'" + name + "', " +
+//                "" + gender +", " +
+//                "'" + URL + "');"
+//
+//        );
+//
+//    }
 
 
 }

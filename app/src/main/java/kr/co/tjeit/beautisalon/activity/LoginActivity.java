@@ -42,6 +42,7 @@ public class LoginActivity extends BaseActivity {
     private Button loginBtn;
     private android.widget.CheckBox autoLoginChk;
     private com.facebook.login.widget.LoginButton fbLoginBtn;
+    private Button signupBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +73,14 @@ public class LoginActivity extends BaseActivity {
     public void setupEvents() {
         super.setupEvents();
 
+        signupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, SignupActivity.class);
+                startActivity(intent);
+            }
+        });
+
         autoLoginChk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -90,8 +99,7 @@ public class LoginActivity extends BaseActivity {
                 Intent intent;
                 if (isWorkerMode) {
                     intent = new Intent(mContext, WorkerMainActivity.class);
-                }
-                else {
+                } else {
                     intent = new Intent(mContext, MainActivity.class);
                 }
 
@@ -143,8 +151,7 @@ public class LoginActivity extends BaseActivity {
 
         if (isWorkerMode) {
             modeTxt.setVisibility(View.VISIBLE);
-        }
-        else {
+        } else {
             modeTxt.setVisibility(View.GONE);
         }
 
@@ -160,6 +167,7 @@ public class LoginActivity extends BaseActivity {
     public void bindViews() {
         super.bindViews();
         this.fbLoginBtn = (LoginButton) findViewById(R.id.fbLoginBtn);
+        this.signupBtn = (Button) findViewById(R.id.signupBtn);
         this.loginBtn = (Button) findViewById(R.id.loginBtn);
         this.autoLoginChk = (CheckBox) findViewById(R.id.autoLoginChk);
         this.idEdt = (EditText) findViewById(R.id.idEdt);

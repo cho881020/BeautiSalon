@@ -86,6 +86,12 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/signupBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="회원가입"/>
+
         <!--페이스북, 카카오톡-->
         <com.facebook.login.widget.LoginButton
             android:id="@+id/fbLoginBtn"
