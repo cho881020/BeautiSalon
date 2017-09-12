@@ -28,6 +28,7 @@ import java.security.NoSuchAlgorithmException;
 import kr.co.tjeit.beautisalon.R;
 import kr.co.tjeit.beautisalon.activity.user_activity.MainActivity;
 import kr.co.tjeit.beautisalon.activity.worker_activity.WorkerMainActivity;
+import kr.co.tjeit.beautisalon.activity.worker_activity.WorkerSignupActivity;
 import kr.co.tjeit.beautisalon.utils.ContextUtil;
 
 public class LoginActivity extends BaseActivity {
@@ -76,7 +77,14 @@ public class LoginActivity extends BaseActivity {
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, SignupActivity.class);
+                Intent intent;
+                if (isWorkerMode) {
+                    intent = new Intent(mContext, WorkerSignupActivity.class);
+                }
+                else {
+                    intent = new Intent(mContext, SignupActivity.class);
+                }
+
                 startActivity(intent);
             }
         });

@@ -135,6 +135,10 @@ public class DBManager {
 
     }
 
+    public long insertDesigner(ContentValues addRowValues) {
+        return mDatabase.insert(TABLE_DESIGNER, null, addRowValues);
+    }
+
 //    public void insertUserBySQL(String name, int gender, String URL) {
 //
 //        mDatabase.execSQL(

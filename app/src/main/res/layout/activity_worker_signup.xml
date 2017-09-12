@@ -46,40 +46,49 @@
     </RadioGroup>
 
     <RadioGroup
+        android:id="@+id/ageRadioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/ageBtn1"
+            android:tag="10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10대"/>
+            android:text="10대" />
 
         <RadioButton
             android:id="@+id/ageBtn2"
-            android:layout_marginLeft="10dp"
+            android:tag="20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="20대"/>
+            android:layout_marginLeft="10dp"
+            android:text="20대" />
+
         <RadioButton
             android:id="@+id/ageBtn3"
-            android:layout_marginLeft="10dp"
+            android:tag="30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="30대"/>
+            android:layout_marginLeft="10dp"
+            android:text="30대" />
+
         <RadioButton
             android:id="@+id/ageBtn4"
-            android:layout_marginLeft="10dp"
+            android:tag="40"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="40대"/>
+            android:layout_marginLeft="10dp"
+            android:text="40대" />
+
         <RadioButton
             android:id="@+id/ageBtn5"
-            android:layout_marginLeft="10dp"
+            android:tag="50"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="50대"/>
+            android:layout_marginLeft="10dp"
+            android:text="50대" />
 
 
     </RadioGroup>
