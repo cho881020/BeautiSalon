@@ -21,6 +21,7 @@ import kr.co.tjeit.beautisalon.activity.ReqPracticeActivity;
 import kr.co.tjeit.beautisalon.adapters.DesignerAdapter;
 import kr.co.tjeit.beautisalon.datas.Designer;
 import kr.co.tjeit.beautisalon.utils.DBManager;
+import kr.co.tjeit.beautisalon.utils.DataBaseUtil;
 import kr.co.tjeit.beautisalon.utils.GlobalData;
 
 public class MainActivity extends BaseActivity {
@@ -236,22 +237,7 @@ public class MainActivity extends BaseActivity {
 //        GlobalData의 designer에 모두 추가
 
         GlobalData.designers.clear();
-
-        Cursor c = DBManager.getInstance(mContext).getAllDesigners();
-
-        if (c != null) {
-            while (c.moveToNext()) {
-                Designer d = new Designer();
-                d.setName(c.getString(1));
-                d.setNickName(c.getString(3));
-                d.setGender(c.getInt(2));
-                d.setMajorAge(c.getInt(4));
-                d.setAvgRating(c.getFloat(c.getColumnIndex("avgRating")));
-
-                GlobalData.designers.add(d);
-            }
-        }
-
+        GlobalData.designers.addAll(DataBaseUtil.getDesignersFromDB(mContext));
 
 
 
