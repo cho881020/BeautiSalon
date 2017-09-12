@@ -9,6 +9,13 @@ import android.database.sqlite.SQLiteDatabase;
  * Created by user on 2017-09-12.
  */
 
+/*
+ * 용도 : 폰 내부의 Database에 직접 접근하는 코드들의 모음.
+  *
+  * 쿼리들이 모두 모여있다. => SQL을 별도의 클래스에 분리.
+ */
+
+
 public class DBManager {
 
 //    1. DB 파일명

@@ -11,7 +11,9 @@ import android.widget.Toast;
 
 import kr.co.tjeit.beautisalon.R;
 import kr.co.tjeit.beautisalon.activity.BaseActivity;
+import kr.co.tjeit.beautisalon.datas.Designer;
 import kr.co.tjeit.beautisalon.utils.DBManager;
+import kr.co.tjeit.beautisalon.utils.DataBaseUtil;
 
 public class WorkerSignupActivity extends BaseActivity {
 
@@ -45,14 +47,15 @@ public class WorkerSignupActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-                ContentValues cv = new ContentValues();
+                Designer inputDesigner = new Designer();
 
                 if (nameEdt.getText().toString().equals("")) {
                     Toast.makeText(mContext, "데이터를 마저 입력해주세요.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                cv.put("name", nameEdt.getText().toString());
+                inputDesigner.setName(nameEdt.getText().toString());
+
 
 
                 if (nickNameEdt.getText().toString().equals("")) {
@@ -60,13 +63,13 @@ public class WorkerSignupActivity extends BaseActivity {
                     return;
                 }
 
-                cv.put("nickName", nickNameEdt.getText().toString());
+                inputDesigner.setNickName(nickNameEdt.getText().toString());
+
 
                 if (manBtn.isChecked()) {
-                    cv.put("gender", 0);
+                    inputDesigner.setGender(0);
                 } else if (womanBtn.isChecked()) {
-
-                    cv.put("gender", 1);
+                    inputDesigner.setGender(1);
                 } else {
                     Toast.makeText(mContext, "데이터를 마저 입력해주세요.", Toast.LENGTH_SHORT).show();
                     return;
@@ -83,13 +86,15 @@ public class WorkerSignupActivity extends BaseActivity {
 
                     int age = Integer.parseInt(findViewById(ageRadioGroup.getCheckedRadioButtonId()).getTag().toString());
 
+                    inputDesigner.setMajorAge(age);
+
 //                    Toast.makeText(mContext, "나이대 : "+ age, Toast.LENGTH_SHORT).show();
 
-                    cv.put("majorAge", age);
 
                 }
 
-                long insertedId = DBManager.getInstance(mContext).insertDesigner(cv);
+
+                long insertedId = DataBaseUtil.signupDesigner(mContext, inputDesigner);
 
                 Toast.makeText(mContext, insertedId + "번째 디자이너 추가", Toast.LENGTH_SHORT).show();
 

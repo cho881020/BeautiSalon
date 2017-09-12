@@ -1,5 +1,6 @@
 package kr.co.tjeit.beautisalon.utils;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 
@@ -11,6 +12,15 @@ import kr.co.tjeit.beautisalon.datas.Designer;
 /**
  * Created by user on 2017-09-12.
  */
+
+// 용도 : DB <-> 화면 중간 중재.
+//    화면을 그릴때 : 데이터 => List, User, Designer
+//    DB에서 던져주는것 : Cursor
+//    중간에서 Cursor를 이용해 List, User, Designer 형태로 가공.
+
+//    데이터 삽입.
+//    직원 회원 가입.
+
 
 public class DataBaseUtil {
 
@@ -35,6 +45,17 @@ public class DataBaseUtil {
 
 
         return mList;
+    }
+
+    public static long signupDesigner(Context context, Designer d) {
+
+        ContentValues cv = new ContentValues();
+        cv.put("name", d.getName());
+        cv.put("gender", d.getGender());
+        cv.put("nickName", d.getNickName());
+        cv.put("majorAge", d.getMajorAge());
+
+        return DBManager.getInstance(context).insertDesigner(cv);
     }
 
 }
