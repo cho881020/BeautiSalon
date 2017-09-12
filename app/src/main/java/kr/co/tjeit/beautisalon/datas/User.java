@@ -14,8 +14,10 @@ public class User extends Person implements Serializable {
     // intent.putExtra => intent에 첨부되어 전송될수 있도록 하는 구문
 
     private Calendar birthDay;
-    private ArrayList<Designer> likeDesigners;
     private String profilePicturePath;
+
+
+    private ArrayList<Designer> likeDesigners;
 
     // Constructor도 생성
 

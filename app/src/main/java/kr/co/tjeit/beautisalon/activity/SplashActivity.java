@@ -11,6 +11,7 @@ import kr.co.tjeit.beautisalon.R;
 import kr.co.tjeit.beautisalon.datas.DesignCase;
 import kr.co.tjeit.beautisalon.datas.Designer;
 import kr.co.tjeit.beautisalon.datas.User;
+import kr.co.tjeit.beautisalon.utils.DBManager;
 import kr.co.tjeit.beautisalon.utils.GlobalData;
 
 public class SplashActivity extends BaseActivity {
@@ -83,6 +84,7 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void addDesigners() {
+
         GlobalData.designers.clear();
         GlobalData.designers.add(new Designer("이가자", 1, "KAJA", 40, 4.5f, new ArrayList<DesignCase>()));
         GlobalData.designers.add(new Designer("박승철", 0, "PSC", 20, 4.0f, new ArrayList<DesignCase>()));
