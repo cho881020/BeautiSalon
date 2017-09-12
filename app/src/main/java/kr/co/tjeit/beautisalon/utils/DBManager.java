@@ -121,6 +121,7 @@ public class DBManager {
 
 
 
+
     }
 
 
@@ -168,5 +169,8 @@ public class DBManager {
         return mDatabase.rawQuery("SELECT * FROM " + TABLE_DESIGNER, null);
     }
 
+    public Cursor get20MajorDesigner() {
+        return mDatabase.rawQuery("SELECT name FROM Designers WHERE majorAge = 20;", null);
+    }
 
 }

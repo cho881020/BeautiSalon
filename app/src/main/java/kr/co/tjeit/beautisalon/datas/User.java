@@ -17,6 +17,7 @@ public class User extends Person implements Serializable {
     private String profilePicturePath;
 
 
+//    관계 : 1명 -> 여러 디자이너, 1 디자이너 <= 여러 사람에게 지정  M:N
     private ArrayList<Designer> likeDesigners;
 
     // Constructor도 생성

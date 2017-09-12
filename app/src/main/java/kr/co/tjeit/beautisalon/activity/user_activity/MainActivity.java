@@ -223,13 +223,24 @@ public class MainActivity extends BaseActivity {
         // 액티비티가 처음 생성될 때 필요한 데이터/화면 값 설정.
         super.setValues();
 
-        Cursor cursor = DBManager.getInstance(mContext).getAllDesignersCursor();
+//        Cursor cursor = DBManager.getInstance(mContext).getAllDesignersCursor();
+//
+//        if (cursor != null) {
+//            while (cursor.moveToNext()) {
+//                Toast.makeText(mContext, "디자이너 : " + cursor.getString(1), Toast.LENGTH_SHORT).show();
+//            }
+//        }
 
-        if (cursor != null) {
-            while (cursor.moveToNext()) {
-                Toast.makeText(mContext, "디자이너 : " + cursor.getString(1), Toast.LENGTH_SHORT).show();
+//        1. 20대를 타겟으로 하는 디자이너의 이름을 토스트로.
+
+        Cursor c = DBManager.getInstance(mContext).get20MajorDesigner();
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                Toast.makeText(mContext, c.getString(0) , Toast.LENGTH_SHORT).show();
             }
         }
+
 
         // 처음에는 조건없이 모든 디자이너를 화면에 출력해야함.
         // 화면에 표시될 List에, Global데이터의 모든 디자이너를 추가.
